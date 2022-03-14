@@ -1,46 +1,38 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import {
+  Example1,
+  Example2,
+  Example3,
+  Example4,
+  Example5,
+  Example6,
+  Example7,
+  Example8,
+  Example9,
+  Example10
+} from './examples'
 import './App.css';
+
+const examples = [
+  Example1,
+  Example2,
+  Example3,
+  Example4,
+  Example5,
+  Example6,
+  Example7,
+  Example8,
+  Example9,
+  Example10
+]
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to React Router!</h1>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        {examples.map((Ex,i) => <Route path={`/${i+1}`} element={<Ex/>} />)}
       </Routes>
     </div>
-  );
-}
-
-function Home() {
-  return (
-    <>
-      <main>
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
-      </main>
-      <nav>
-        <Link to="/about">About</Link>
-      </nav>
-    </>
-  );
-}
-
-function About() {
-  return (
-    <>
-      <main>
-        <h2>Who are we?</h2>
-        <p>
-          That feels like an existential question, don't you
-          think?
-        </p>
-      </main>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-    </>
   );
 }
 
