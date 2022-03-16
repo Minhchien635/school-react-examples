@@ -9,9 +9,9 @@ import {
   Example7,
   Example8,
   Example9,
-  Example10
-} from './examples'
-import './App.css';
+  Example10,
+} from "./examples";
+import "./App.css";
 
 const examples = [
   Example1,
@@ -23,14 +23,16 @@ const examples = [
   Example7,
   Example8,
   Example9,
-  Example10
-]
+  Example10,
+];
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        {examples.map((Ex,i) => <Route path={`/${i+1}`} element={<Ex/>} />)}
+        {examples.map((Ex, i) => (
+          <Route path={`/${i + 1}`} element={<Ex />} />
+        ))}
       </Routes>
     </div>
   );
