@@ -7,7 +7,6 @@ export function Example7() {
   const red = useRef();
   const yellow = useRef();
   const green = useRef();
-  const number = useRef();
 
   useEffect(() => {
     setInterval(() => {
@@ -34,7 +33,8 @@ export function Example7() {
   }, [color]);
 
   if (count < 0) {
-    setCount(30);
+    color === "red" ? setCount(4) : setCount(30);
+
     switch (color) {
       case "red":
         setColor("yellow");
