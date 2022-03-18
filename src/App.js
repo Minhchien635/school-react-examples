@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <Routes>
         {examples.map((Ex, i) => (
-          <Route path={`/${i + 1}`} element={<Ex />} />
+          <Route key={i} path={`/${i + 1}`} element={<Ex />} />
         ))}
       </Routes>
     </div>

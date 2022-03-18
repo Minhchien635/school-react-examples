@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export function Example3() {
   const [count, setCount] = useState(0);
@@ -8,7 +8,9 @@ export function Example3() {
   return (
     <>
       <h3>--- State ---</h3>
-      <button className="btn btn-primary" onClick={increment}>{count}</button>
+      <button className="btn btn-primary" onClick={increment}>
+        {count}
+      </button>
     </>
   );
 }

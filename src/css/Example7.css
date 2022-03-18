@@ -1,0 +1,33 @@
+.circle {
+  border: 0.1875em solid #0f1c3f;
+  border-radius: 50%;
+  height: 5em;
+  width: 5em;
+  margin: 1em;
+}
+
+.red {
+  background: rgb(255, 0, 0);
+}
+
+.yellow {
+  background: rgb(255, 255, 0);
+}
+
+.green {
+  background: rgb(11, 247, 11);
+}
+
+.number {
+  background: black;
+  color: rgb(76, 222, 248);
+  height: 5em;
+  width: 5em;
+  margin: 1em;
+  border-radius: 1em;
+}
+
+.number > h3 {
+  padding: 10px;
+  font-size: 3em;
+}

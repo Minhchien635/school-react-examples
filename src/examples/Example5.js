@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import { useState, createContext } from "react";
 import { Paragraph } from "../utils/Paragraph";
 
 export const ThemeContext = createContext();
