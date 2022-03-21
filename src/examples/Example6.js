@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 export function Example6() {
   useEffect(() => {

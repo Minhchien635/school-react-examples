@@ -4,7 +4,7 @@ export function Example9() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const printValues = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     alert(`Username: ${username}, Password: ${password}`);
   };
@@ -12,7 +12,7 @@ export function Example9() {
   return (
     <>
       <h3>--- State ---</h3>
-      <form onSubmit={printValues}>
+      <form onSubmit={handleSubmit}>
         <label>
           Username:
           <input

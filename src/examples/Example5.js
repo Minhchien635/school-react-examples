@@ -1,21 +1,39 @@
-import { useState, createContext } from "react";
-import { Paragraph } from "../utils/Paragraph";
-
-export const ThemeContext = createContext();
+import { useState } from "react";
 
 export function Example5() {
-  const [theme, setTheme] = useState("blue");
+  const [age, setAge] = useState();
 
-  const toggleTheme = () => {
-    setTheme(theme === "blue" ? "red" : "blue");
+  const handleChange = (e) => {
+    setAge(e.target.value);
   };
+
   return (
     <>
-      <h3>--- Context ---</h3>
-      <ThemeContext.Provider value={theme}>
-        <Paragraph />
-        <button className="btn btn-primary" onClick={toggleTheme}>Toggle</button>
-      </ThemeContext.Provider>
+      <h3>--- Conditional rendering ---</h3>
+
+      <input
+        value={age}
+        onChange={handleChange}
+        placeholder="Input your age"
+        type="number"
+        min="1"
+      />
+
+      <Age age={age} />
     </>
   );
+}
+
+function Age(props) {
+  const { age } = props;
+
+  if (!age) {
+    return <div>You haven't specified your age</div>;
+  }
+
+  if (age < 18) {
+    return <div>You are not an adult</div>;
+  }
+
+  return <div>You are an adult</div>;
 }
