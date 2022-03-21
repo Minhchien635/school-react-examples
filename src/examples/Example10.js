@@ -1,25 +1,29 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../css/Example10.css";
 
 export function Example10() {
-  const inputRef = useRef();
-  const [value, setValue] = useState("");
-  const content = useRef();
+  const [visible, setVisible] = useState(true);
 
-  useEffect(() => {
-    content.current.innerHTML = value;
-  }, [value]);
+  function handleToggle() {
+    setVisible(!visible);
+  }
 
   return (
-    <>
-      <h3>--- Effect ---</h3>
-      <input
-        className="input"
-        ref={inputRef}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <h4 ref={content}></h4>
-    </>
+    <div>
+      <button onClick={handleToggle} className="btn btn-primary">
+        Toggle
+      </button>
+      {visible && <Component />}
+    </div>
   );
+}
+
+export function Component() {
+  useEffect(() => {
+    return () => {
+      alert("Component unmounted!");
+    };
+  }, []);
+
+  return <div>Component</div>;
 }
